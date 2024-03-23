@@ -149,10 +149,18 @@ namespace Nop.Core
                 }
             }
 
-            if (String.IsNullOrEmpty(result) && _httpContext.Request.UserHostAddress != null)
+            try
             {
-                result = _httpContext.Request.UserHostAddress;
+                if (String.IsNullOrEmpty(result) && _httpContext.Request?.UserHostAddress != null)
+                {
+                    result = _httpContext.Request.UserHostAddress;
+                }
             }
+            catch (Exception)
+            {
+                result = string.Empty;
+            }
+            
 
             //some validation
             if (result == "::1")
@@ -234,7 +242,14 @@ namespace Nop.Core
                 }
                 else
                 {
-                    useSsl = _httpContext.Request.IsSecureConnection;
+                    try
+                    {
+                        useSsl = _httpContext.Request.IsSecureConnection;
+                    }
+                    catch (Exception)
+                    {
+                        useSsl = false;
+                    }
                 }
             }
 
