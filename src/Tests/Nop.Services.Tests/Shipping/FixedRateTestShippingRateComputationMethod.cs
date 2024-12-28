@@ -82,11 +82,6 @@ namespace Nop.Services.Tests.Shipping
             routeValues = null;
         }
 
-        public GetShippingOptionResponse GetShippingOptions(GetShippingOptionProductRequest getShippingOptionProductRequest)
-        {
-            throw new NotImplementedException();
-        }
-
         /// <summary>
         /// Gets a shipment tracker
         /// </summary>

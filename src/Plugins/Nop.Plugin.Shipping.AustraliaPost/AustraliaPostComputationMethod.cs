@@ -373,10 +373,6 @@ namespace Nop.Plugin.Shipping.AustraliaPost
             base.Uninstall();
         }
 
-        public GetShippingOptionResponse GetShippingOptions(GetShippingOptionProductRequest getShippingOptionProductRequest)
-        {
-            throw new NotImplementedException();
-        }
         #endregion
 
         #region Properties

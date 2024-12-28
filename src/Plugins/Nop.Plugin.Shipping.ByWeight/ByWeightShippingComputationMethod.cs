@@ -11,10 +11,11 @@ using Nop.Services.Configuration;
 using Nop.Services.Localization;
 using Nop.Services.Shipping;
 using Nop.Services.Shipping.Tracking;
+using SmartenUP.Core.Services.Shippping;
 
 namespace Nop.Plugin.Shipping.ByWeight
 {
-    public class ByWeightShippingComputationMethod : BasePlugin, IShippingRateComputationMethod
+    public class ByWeightShippingComputationMethod : BasePlugin, ISUPShippingRateComputationMethod
     {
         #region Fields
 
@@ -266,7 +267,7 @@ namespace Nop.Plugin.Shipping.ByWeight
             base.Uninstall();
         }
 
-        public GetShippingOptionResponse GetShippingOptions(GetShippingOptionProductRequest getShippingOptionProductRequest)
+        public GetShippingOptionResponse GetShippingOptions(SUPGetShippingOptionProductRequest getShippingOptionProductRequest)
         {
             if (getShippingOptionProductRequest == null)
                 throw new ArgumentNullException("getShippingOptionRequest");

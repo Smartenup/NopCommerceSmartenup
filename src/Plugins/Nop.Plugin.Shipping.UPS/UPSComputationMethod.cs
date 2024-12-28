@@ -928,10 +928,7 @@ namespace Nop.Plugin.Shipping.UPS
             base.Uninstall();
         }
 
-        public GetShippingOptionResponse GetShippingOptions(GetShippingOptionProductRequest getShippingOptionProductRequest)
-        {
-            throw new NotImplementedException();
-        }
+        
 
         #endregion
 

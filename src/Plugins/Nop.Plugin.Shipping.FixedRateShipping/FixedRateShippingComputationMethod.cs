@@ -142,33 +142,6 @@ namespace Nop.Plugin.Shipping.FixedRateShipping
             base.Uninstall();
         }
 
-        public GetShippingOptionResponse GetShippingOptions(GetShippingOptionProductRequest getShippingOptionProductRequest)
-        {
-            if (getShippingOptionProductRequest == null)
-                throw new ArgumentNullException("getShippingOptionRequest");
-
-            var response = new GetShippingOptionResponse();
-
-            if (getShippingOptionProductRequest.Product == null)
-            {
-                response.AddError("No shipment item");
-                return response;
-            }
-
-            int? restrictByCountryId = (getShippingOptionProductRequest.ShippingAddress != null && getShippingOptionProductRequest.ShippingAddress.Country != null) ? (int?)getShippingOptionProductRequest.ShippingAddress.Country.Id : null;
-            var shippingMethods = this._shippingService.GetAllShippingMethods(restrictByCountryId);
-            foreach (var shippingMethod in shippingMethods)
-            {
-                var shippingOption = new ShippingOption();
-                shippingOption.Name = shippingMethod.GetLocalized(x => x.Name);
-                shippingOption.Description = shippingMethod.GetLocalized(x => x.Description);
-                shippingOption.Rate = GetRate(shippingMethod.Id);
-                response.ShippingOptions.Add(shippingOption);
-            }
-
-            return response;
-        }
-
         #endregion
 
         #region Properties
