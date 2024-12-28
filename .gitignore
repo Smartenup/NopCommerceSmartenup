@@ -154,3 +154,4 @@ src/Presentation/Nop.Web/Nop.Web.csproj.user
 /src/Plugins/Nop.Plugin.Shipping.UPS/.vs
 /src/Plugins/Nop.Plugin.Shipping.USPS/.vs
 *.user
+/Presentation/Nop.Web/Plugins/Widgets.ProductShipping
