@@ -53,20 +53,20 @@
                     success: function (data) {
                         try {
 
-                            if (data.uf.length > 0) {
-                                stateProvince.val(data.uf).change();
+                            if (data.Uf.length > 0) {
+                                stateProvince.val(data.Uf).change();
                                 city.focus();
                             }
-                            if (data.cidade.length > 0) {
-                                city.val(data.cidade);
+                            if (data.Localidade.length > 0) {
+                                city.val(data.Localidade);
                                 address2.focus();
                             }
-                            if (data.bairro.length > 0) {
-                                address2.val(data.bairro);
+                            if (data.Bairro.length > 0) {
+                                address2.val(data.Bairro);
                                 address2.focus();
                             }
-                            if (data.end.length > 0) {
-                                address1.val(data.end);
+                            if (data.Logradouro.length > 0) {
+                                address1.val(data.Logradouro);
                                 address1.focus();
                             }
                             
